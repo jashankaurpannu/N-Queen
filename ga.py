@@ -37,6 +37,7 @@ def crossover(individual1, individual2):
         child1.append(-1)
         child2.append(-1)
     cross_over_point = random.randint(1, n - 1)
+    #doing crossover between two children
     for i in range(cross_over_point):
         child1[i] = individual1[i]
         child2[i] = individual2[i]
@@ -98,7 +99,7 @@ class Genetic(object):
         #we mutate each child(it will mutate or not possibly)
         child1 = mutation(child1)
         child2 = mutation(child2)
-        #in code below we check if each child is better than each one of queens individuals we set that individual the new child
+        #in code below we check if each child is better than each one of queens individuals and that individual is set as new child
         if fitness(child1) > fitness(child2):
             child1, child2 = child2, child1
         child1_swaped = False
